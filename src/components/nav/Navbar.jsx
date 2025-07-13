@@ -42,13 +42,13 @@ const Navbar = () => {
 
             <div className="navbar-bottom">
                 <div className='navbar-bot-inner'>
-                   <li>
-                    Home
-                   </li>
-                   <li>Shop</li>
-                   <li>Cart</li>
-                   <li>About</li>
-                   <li>Contact</li>
+                   
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/shop">Shop</NavLink>
+                <NavLink to="/cart">Cart</NavLink>
+                <NavLink to="/about">About</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
+                           
                  
                 </div>
             </div>

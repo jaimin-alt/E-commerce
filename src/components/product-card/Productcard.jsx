@@ -8,12 +8,12 @@ const Productcard = ({name,image,category,price}) => {
     </div>
 
     <div className="details">
-        <p>
+        <p className='name'>
    name : {name}
     </p>
     
-    <p>
-       price:{price}
+    <p className='price'>
+       price : {price}
     </p>
      
      <button>ADD+</button>

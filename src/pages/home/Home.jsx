@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import category from '../../dummydata/category'
 import bg from '../../assets/bg0.gif'
 import Product from '../../components/product/Product'
 const Home = () => {
+
+ const [cat,setcat] = useState("All")
+
   return (
     <div className='home'>
          
@@ -23,7 +26,7 @@ const Home = () => {
       
         {
           category.map((item)=>(
-            <div className="category-card">
+            <div className="category-card" onClick={()=>setcat(item.name)}>
             <div className="cat-img">
                <img src={item.image} alt="" />
             </div>
@@ -44,12 +47,14 @@ const Home = () => {
         Trending Products
       </p>
             
-        <Product/>
+        <Product cat={cat}/>
     
       </div>
-
+      
+      
 
          </div>
+
     </div>
   )
 }

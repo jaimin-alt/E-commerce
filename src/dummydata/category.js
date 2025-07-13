@@ -3,7 +3,7 @@ import electronics from '../assets/electronics.png'
 import home from '../assets/home.jpg'
 import sports from '../assets/sports.jpg'
 import beauty from '../assets/beauty.jpg'
-
+import all from '../assets/emptycart.png'
 
 const category = [
     {
@@ -30,6 +30,11 @@ const category = [
         id: 5,
         name: "Beauty",
         image:beauty
+    },
+     {
+        id: 6,
+        name: "All",
+        image:all
     }
 ]
 
