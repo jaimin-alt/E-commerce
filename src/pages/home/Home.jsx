@@ -1,6 +1,8 @@
 import React from 'react'
 import './Home.css'
+import category from '../../dummydata/category'
 import bg from '../../assets/bg0.gif'
+import Product from '../../components/product/Product'
 const Home = () => {
   return (
     <div className='home'>
@@ -10,6 +12,43 @@ const Home = () => {
             <div className='hero-bg'>
                 <img src={bg} alt="" />
             </div>
+       
+      <div className="category-wrapper">
+        <div>
+          <p>
+            Categories
+          </p>
+        </div>
+         <div className='category-section'>
+      
+        {
+          category.map((item)=>(
+            <div className="category-card">
+            <div className="cat-img">
+               <img src={item.image} alt="" />
+            </div>
+
+            <span>{item.name}</span>
+
+            </div>
+  
+          ))
+        }
+       </div>
+      </div>
+           
+
+      <div className="trending-wrapper">
+      
+      <p>
+        Trending Products
+      </p>
+            
+        <Product/>
+    
+      </div>
+
+
          </div>
     </div>
   )
