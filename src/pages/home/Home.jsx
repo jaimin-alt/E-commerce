@@ -26,7 +26,7 @@ const Home = () => {
       
         {
           category.map((item)=>(
-            <div className="category-card" onClick={()=>setcat(item.name)}>
+            <div className="category-card" onClick={()=>setcat(item.name)} key={item.id}>
             <div className="cat-img">
                <img src={item.image} alt="" />
             </div>

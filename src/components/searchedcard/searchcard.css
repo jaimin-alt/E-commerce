@@ -1,0 +1,43 @@
+.searchcard{
+    height: 250px;
+    width: 150px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.searchcard span{
+    font-size: 0.9rem;
+}
+
+.img-container{
+    height:50%;
+    overflow: hidden;
+    width: 100%;
+  
+    border-radius: 5px;
+   
+}
+
+.img-container img{
+    height: 100%;
+    width: 100%;
+     object-fit:cover;
+  
+}
+
+.add{
+    align-self: center;
+    padding:3px 10px;
+    border: none;
+    background: #000;
+    color: white;
+    border-radius: 10px;
+    font-size: 0.9rem;
+     border: 1px solid black;
+}

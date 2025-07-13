@@ -9,7 +9,7 @@ const Productcard = ({name,image,category,price}) => {
 
     <div className="details">
         <p className='name'>
-   name : {name}
+   {name}
     </p>
     
     <p className='price'>
