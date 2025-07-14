@@ -23,6 +23,23 @@ return(
    
    }
    
+   else if(cat=="Allinone")
+   {
+      return(
+    <div className='products'>
+        
+         
+         
+          {
+         dummydata.map((item)=>(
+         <Productcard key={item.id} image={item.image} name={item.name} price={item.price} category={item.category} />
+         
+         ))
+          }
+    </div>
+   )
+
+   }
 
   return (
     <div className='products'>
