@@ -14,7 +14,7 @@ return(
          
           {
          dummydata.slice(0,10).map((item)=>(
-         <Productcard key={item.id} image={item.image} name={item.name} price={item.price} category={item.category} />
+         <Productcard key={item.id} item={item} />
          
          ))
           }
@@ -32,7 +32,7 @@ return(
          
           {
          dummydata.map((item)=>(
-         <Productcard key={item.id} image={item.image} name={item.name} price={item.price} category={item.category} />
+         <Productcard key={item.id} item={item}/>
          
          ))
           }

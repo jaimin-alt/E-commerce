@@ -8,11 +8,17 @@ import Shop from '../../pages/shop/Shop'
 import Cart from '../../pages/cart/Cart'
 import About from '../../pages/about/About'
 import Contact from '../../pages/contact/Contact'
+import { Provider } from 'react-redux'
+import CartStore from '../../store/Cartstore'
+import { ToastContainer } from 'react-toastify'
 const App = () => {
   return (
     <div>
     <BrowserRouter>
-    <Navbar/>
+    <Provider store={CartStore}>
+        <ToastContainer position="top-right" autoClose={2000} theme='dark'
+/>
+      <Navbar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
             <Route path='/shop' element={<Shop/>}/>
@@ -24,6 +30,7 @@ const App = () => {
     <footer>
       <Footer/>
     </footer>
+    </Provider>
     </BrowserRouter>
     </div>
   )

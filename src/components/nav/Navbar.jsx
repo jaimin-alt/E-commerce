@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { MdCancel } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 import './Navbar.css'
 import { dummydata } from '../../dummydata/Dummydata';
@@ -7,10 +8,14 @@ import { BsFillBagHeartFill } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, NavLink } from 'react-router-dom';
-import Productcard from '../product-card/Productcard';
 import Searchcard from '../searchedcard/Searchcard';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
+ const CartItemCount =    useSelector((state)=>state.cartslice.cart)
+
 
      const [searchval, setsearchval] = useState(undefined);
     const [IsDisplay, setisdisplay] = useState(false);
@@ -35,7 +40,7 @@ const Navbar = () => {
         <div className='navbar'>
             <div className="navbar-top">
 
-                <div className="logo">
+                <div className="logo" onClick={()=>navigate('/')}>
                     <span>V-SHOP</span>
                     <span>
                         <BsFillBagHeartFill />
@@ -53,12 +58,12 @@ const Navbar = () => {
                 </div>
 
                 <div className="cart-box">
-                    <div className='cart-box-inner'>
+                    <div className='cart-box-inner' onClick={()=>navigate('./cart')}>
                         <span>
                             <FaShoppingCart />
                         </span>
                         <span className='value'>
-                            0
+                            {CartItemCount.length}
                         </span>
                     </div>
                 </div>
@@ -93,7 +98,7 @@ const Navbar = () => {
                     <div className='searched-items'>
                         {filteredData.length > 0 ? (
                         filteredData.map((item) => (
-                                <Searchcard key={item.id} name={item.name} price={item.price} image={item.image}/>
+                                <Searchcard key={item.id} item={item}/>
                         ))
                     ) : (
                         <div style={{ padding: "1rem",display:"flex",justifyContent:"center",alignItems:"center",height:"100%", width:"100%" ,fontSize:"2rem",fontWeight:"bolder" , letterSpacing:"4px" , wordSpacing:"10px"}}>No matching products found.</div>

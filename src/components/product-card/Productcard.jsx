@@ -1,22 +1,59 @@
 import React from 'react'
 import './productcard.css'
-const Productcard = ({name,image,category,price}) => {
+import { useDispatch, useSelector } from 'react-redux'
+  import { ToastContainer, toast } from 'react-toastify';
+import { Additem, DecreaseQuantity, IncreaseQuantity } from '../../slices/cartslice';
+const Productcard = ({item}) => {
+const dispatch = useDispatch();
+const cart = useSelector((state)=>state.cartslice.cart);
+console.log(cart.length)
+const cartitem = cart.find((x)=>x.id==item.id);
+const quantity = cartitem?.quantity || 0;   
+ const addnotify = () => toast("Product Added To Cart!");
+  const removenotify = () => toast("Product Removed From Cart!");
   return (
     <div className='card'>
     <div className='img'>
-  <img src={image} alt="" />
+  <img src={item?.image} alt="" />
     </div>
 
     <div className="details">
         <p className='name'>
-   {name}
+   {item?.name}
     </p>
     
     <p className='price'>
-       price : {price}
+       price : {item?.price}
     </p>
      
-     <button>ADD+</button>
+     {
+     quantity>0?
+    
+      <div className='updatedbutton'>
+        <button className='plus' onClick={()=>dispatch(IncreaseQuantity(item))}>+</button>
+        <span>{quantity}</span>
+      <button className='minus' onClick={()=>{dispatch(DecreaseQuantity(item))
+
+        if(quantity==1)
+        {
+          removenotify();
+        }
+      }}>-</button>
+      </div>
+        
+      
+     
+     :
+        
+          <button className='add' onClick={()=>
+          {dispatch(Additem(item));
+        addnotify();
+         }
+         }>ADD+</button>
+         
+        
+       
+     }
     </div>
 
     </div>
