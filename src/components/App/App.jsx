@@ -13,7 +13,7 @@ import CartStore from '../../store/Cartstore'
 import { ToastContainer } from 'react-toastify'
 const App = () => {
   return (
-    <div>
+    <div className='app'>
     <BrowserRouter>
     <Provider store={CartStore}>
         <ToastContainer position="top-right" autoClose={2000} theme='dark'

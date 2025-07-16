@@ -1,0 +1,39 @@
+.cart-container{
+    min-height: 100vh;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+
+    align-items: center;
+}
+
+.emptycart{
+      min-height: 100vh;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+
+}
+
+.empty-img{
+    height:250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width: 70%;
+   cursor: pointer;
+}
+
+.empty-img>img{
+    height: 100%;
+    object-fit: cover;
+}
