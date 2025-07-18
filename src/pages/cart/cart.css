@@ -37,3 +37,14 @@
     height: 100%;
     object-fit: cover;
 }
+
+@media screen and (max-width:355px) {
+
+    .empty-img{
+        width: 100%;
+    }
+    .empty-img>img{
+        width: 90%;
+        height: 90%;
+    }
+}

@@ -14,6 +14,7 @@ const Home = () => {
 
             <div className='hero-bg'>
                 <img src={bg} alt="" />
+              
             </div>
        
       <div className="category-wrapper">
