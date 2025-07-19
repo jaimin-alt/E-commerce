@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { MdCancel } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
-
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import './Navbar.css'
 import { dummydata } from '../../dummydata/Dummydata';
 import { BsFillBagHeartFill } from "react-icons/bs";
@@ -13,7 +14,13 @@ import { useSelector } from 'react-redux';
 
 const Navbar = () => {
     const navigate = useNavigate();
-
+    useGSAP(()=>{
+        gsap.from(".logo",{
+            opacity:0,
+            delay:0.5,
+            duration:1
+        })
+    })
  const CartItemCount =    useSelector((state)=>state.cartslice.cart)
 
 

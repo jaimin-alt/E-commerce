@@ -1,12 +1,15 @@
 import React from 'react'
 import './productcard.css'
+import gsap from 'gsap';
+
 import { useDispatch, useSelector } from 'react-redux'
   import { toast } from 'react-toastify';
 import { Additem, DecreaseQuantity, IncreaseQuantity } from '../../slices/cartslice';
+
+
 const Productcard = ({item}) => {
 
 
-  
 const dispatch = useDispatch();
 const cart = useSelector((state)=>state.cartslice.cart);
 console.log(cart.length)

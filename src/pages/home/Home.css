@@ -157,6 +157,7 @@
 .trending-wrapper{
     width: 100%;
     margin-top: 20px;
+    overflow: hidden;
 }
 
 .trending-wrapper>p{

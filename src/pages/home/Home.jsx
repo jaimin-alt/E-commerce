@@ -1,11 +1,55 @@
 import React, { useState } from 'react'
 import './Home.css'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger }from 'gsap/ScrollTrigger'
+import { useRef } from 'react'
 import category from '../../dummydata/category'
 import bg from '../../assets/bg0.gif'
 import Product from '../../components/product/Product'
-const Home = () => {
 
+gsap.registerPlugin(ScrollTrigger)
+const Home = () => {
+ 
+  const ref = useRef();
  const [cat,setcat] = useState("All")
+  
+ useGSAP(()=>{
+      gsap.from(".hero-bg",{
+        x:-100,
+        duration:1,
+        opacity:0,
+        delay:0.4,
+        
+      }
+      )
+ })
+
+useGSAP(()=>{
+      gsap.from(".category-section",{
+        x:100,
+        duration:1,
+        opacity:0,
+        delay:0.4
+      }
+      )
+ })
+
+
+ useGSAP(()=>{
+  gsap.from(ref.current,{
+    opacity:0,
+    duration:1,
+    y:100,
+    scrollTrigger:{
+      trigger:ref.current,
+      start:"top 70%",
+      toggleActions:"play none none reverse",
+      markers:false
+
+    }
+  })
+ })
 
   return (
     <div className='home'>
@@ -42,13 +86,13 @@ const Home = () => {
       </div>
            
 
-      <div className="trending-wrapper">
+      <div className="trending-wrapper" ref={ref}>
       
       <p>
         Trending Products
       </p>
             
-        <Product cat={cat}/>
+        <Product  cat={cat}/>
     
       </div>
       
