@@ -48,7 +48,7 @@ const Navbar = () => {
             <div className="navbar-top">
 
                 <div className="logo" onClick={()=>navigate('/')}>
-                    <span>V-SHOP</span>
+                    <span>HJ-SHOP</span>
                     <span>
                         <BsFillBagHeartFill />
                     </span>
